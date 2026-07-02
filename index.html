@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Planner & Assistant</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>📚 Study Planner & Assistant</h1>
+
+    <button onclick="toggleDarkMode()">🌙 Dark Mode</button>
+
+    <br><br>
+
+    <input id="subjectInput" placeholder="Subject">
+    <input type="date" id="dateInput">
+
+    <button onclick="addSubject()">Add Subject</button>
+    <button onclick="resetAll()">Reset All</button>
+
+    <br><br>
+
+    <input
+        id="searchInput"
+        onkeyup="searchSubjects()"
+        placeholder="Search subject..."
+    >
+
+    <button onclick="sortByDate()">Sort By Date</button>
+    <button onclick="sortByPriority()">Sort By Priority</button>
+
+    <div class="progress-container">
+
+        <div id="progressText">
+            Progress: 0%
+        </div>
+
+        <div class="bar">
+            <div id="progressBar"></div>
+        </div>
+
+    </div>
+
+    <div class="dashboard">
+
+        <div class="card">
+            <h3>Total</h3>
+            <p id="totalTasks">0</p>
+        </div>
+
+        <div class="card">
+            <h3>Completed</h3>
+            <p id="completedTasks">0</p>
+        </div>
+
+        <div class="card">
+            <h3>Pending</h3>
+            <p id="pendingTasks">0</p>
+        </div>
+
+    </div>
+
+    <p id="emptyState"
+       style="text-align:center; opacity:0.6;">
+       No subjects yet. Add your first study task 🚀
+    </p>
+
+    <div id="subjectList"></div>
+
+    <div class="assistant">
+
+        <button onclick="askAssistant()">
+            Ask Assistant
+        </button>
+
+        <p id="assistantResponse"></p>
+
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
+<!-- STREAK + WEEKLY + POMODORO -->
+<div class="extra-dashboard">
+
+    <div class="card">
+        <h3>🔥 Streak</h3>
+        <p id="streakCount">0 Days</p>
+    </div>
+
+    <div class="card">
+        <h3>📊 Weekly</h3>
+        <p id="weeklyStats">0 Tasks</p>
+    </div>
+
+    <div class="card">
+        <h3>⏱Pomodoro Timer</h3>
+        <p id="timer" class="pomodoro-time">25:00</p>
+
+        <div class="btn-group">
+            <button onclick="startPomodoro()">Start</button>
+            <button onclick="pausePomodoro()">Pause</button>
+            <button onclick="resetPomodoro()">Reset</button>
+        </div>
+    </div>
+
+</div>
